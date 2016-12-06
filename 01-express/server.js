@@ -25,6 +25,7 @@ io.on('connection', socket => {
     console.log('Client connected!');
     socket.on('chat:add', data => {
         console.log(data);
+        io.emit('chat:added', data);
     });
 
     socket.on('disconnect', () => {
